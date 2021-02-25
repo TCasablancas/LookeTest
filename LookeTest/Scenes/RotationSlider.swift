@@ -10,6 +10,8 @@ import SnapKit
 
 class RotationSlider: UIViewController {
     
+    var mydata: Array = ["1", "2", "3", "4", "5"]
+    
     private lazy var container: UIView = {
         let view = UIView()
         return view
@@ -19,6 +21,24 @@ class RotationSlider: UIViewController {
         super.viewDidLoad()
         setup()
         self.view.backgroundColor = .white
+    }
+}
+
+extension RotationSlider {
+    
+    func rotacaoEsquerda(_ numbers: [Array<Any>]) {
+        let first = numbers[0]
+        var arr = numbers
+        for i in 0..<numbers.count - 1 {
+            arr[i] = arr[i + 1]
+        }
+        arr[numbers.count - 1] = first
+    }
+    
+    func callRotacao() {
+        for number in 0...4 {
+            rotacaoEsquerda([mydata])
+        }
     }
 }
 

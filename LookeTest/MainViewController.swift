@@ -14,11 +14,17 @@ class MainViewController: UICollectionViewController {
     
     
     var arrayElements: [String] = [
-        "Toppings Exhibition",
-        "Algorithm",
-        "Rotation Slider",
-        "Vehicle Assortment",
-        "Pattern Explanation"
+        "01. Toppings Exhibition",
+        "02. Algorithm",
+        "03. Rotation Slider",
+        "04. Vehicle Assortment",
+        "05. Pattern Explanation",
+        "06. Screen Size",
+        "07. Outlet Definition",
+        "08. KVO and Notification Center",
+        "09. AppID and BundleID",
+        "10. Add Framework",
+        "11. "
     ]
     
     override func viewDidLoad() {
@@ -110,6 +116,21 @@ extension MainViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         case 4:
             let vc = PatternsExplanation()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 5:
+            let vc = ScreenSize()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 6:
+            let vc = OutletDefinition()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 7:
+            let vc = NotificationCenter()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 8:
+            let vc = BundleId()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 9:
+            let vc = AddFramework()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
             break

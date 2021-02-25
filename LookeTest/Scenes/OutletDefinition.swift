@@ -1,14 +1,14 @@
 //
-//  PatternsExplanation.swift
+//  OutletDefinition.swift
 //  LookeTest
 //
-//  Created by Thyago on 23/02/21.
+//  Created by Thyago on 25/02/21.
 //
 
 import UIKit
 import SnapKit
 
-class PatternsExplanation: UIViewController {
+class OutletDefinition: UIViewController {
     
     private lazy var container: UIView = {
         let view = UIView()
@@ -25,18 +25,18 @@ class PatternsExplanation: UIViewController {
         setup()
         setupAnswer()
         self.view.backgroundColor = .white
-        title = "05. Pattern Explanation"
+        title = "07. Outlet Definition"
     }
 }
 
-extension PatternsExplanation {
+extension OutletDefinition {
     func setupAnswer() {
-        textBox.title.text = "Explique os patterns MVVM e MVC, escolha um deles e de um exemplo de utilização prática no desenvolvimento de aplicativos para iOS."
-        textBox.answer.text = "No modelo MVC existe uma comunicação retilinea entre as camadas, o que é quebrado no MVVM, onde a ViewModel pode se comunicar com a camada View ou Model, ou ter a mesma responsabilidade em trafegar informações entre estas.\n\nPor preferência trabalho com o VIPER, mas escolheria MVVM já que a quebra de responsabilidades torna melhor a usabilidade de codigo e o legado fica mais simples de ser tratado em caso de bugs.\n\nUm app de transações bancárias é um bom exemplo para o MVVM, já que são muitas responsabilidades e consumo/numero de dados a serem mostrados é alto."
+        textBox.title.text = "Defina IBOutlet no desenvolvimento de aplicações iOS."
+        textBox.answer.text = "É um marcardor que liga uma propriedade da ViewController com um componente de interface, utilizado em storyboards e xibs.\n\n Ele é importante no caso de um desenvolvimento visual, tornando o mesmo mais ágil."
     }
 }
 
-extension PatternsExplanation: ViewCode {
+extension OutletDefinition: ViewCode {
     func viewHierarchy() {
         self.view.addSubview(container)
         container.addSubview(textBox)
