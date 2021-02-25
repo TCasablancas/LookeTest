@@ -15,10 +15,29 @@ class AlgorithmOutput: UIViewController {
         return view
     }()
     
+    var number: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         self.view.backgroundColor = .white
+        
+        doSomething(number)
+    }
+}
+
+// MARK: - Algorithm
+
+extension AlgorithmOutput {
+    func doSomething(_ num: Int) -> Int {
+        
+        self.number = num
+        
+        if num <= 1 {
+            return num
+        } else {
+            return num * doSomething(num - 1)
+        }
     }
 }
 

@@ -15,10 +15,23 @@ class PatternsExplanation: UIViewController {
         return view
     }()
     
+    private lazy var textBox: TextBox = {
+        let view = TextBox()
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        setupAnswer()
         self.view.backgroundColor = .white
+    }
+}
+
+extension PatternsExplanation {
+    func setupAnswer() {
+        textBox.title.text = "Explique os patterns MVVM e MVC, escolha um deles e de um exemplo de utilização prática no desenvolvimento de aplicativos para iOS."
+        textBox.answer.text = ""
     }
 }
 

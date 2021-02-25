@@ -14,7 +14,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var orientationLock = UIInterfaceOrientationMask.portrait
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+//        let appearance = UINavigationBar.appearance()
+        
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let viewController = MainViewController()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        
+        let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
+        window.windowScene = windowScene
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

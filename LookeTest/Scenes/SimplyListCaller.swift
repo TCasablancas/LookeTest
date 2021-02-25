@@ -20,6 +20,7 @@ class SimplyListCaller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        getData()
         self.view.backgroundColor = .white
     }
 }
@@ -38,7 +39,7 @@ extension SimplyListCaller {
         getToppingList() { (response) in
             switch response {
             case .success(let model):
-                
+                print(model.id)
             case .serverError(let error):
                 let errorData = "\(error.statusCode), -, \(error.msgError)"
                 print(errorData)
